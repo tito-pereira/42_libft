@@ -1,5 +1,5 @@
 This is 42's first Common Core project after 42's intensive Piscine of C basics.
-In this project, i was tasked of creating my very first personal library of support
+In this project, i was tasked with creating my very first personal library of support
 functions that i would be allowed to use in my subsequent projects in 42,
 and then compile it into a static library using Makefile.
 Like every other 42 project, it had several goals in mind:
