@@ -3,7 +3,7 @@ In this project, i was tasked of creating my very first personal library of supp
 functions that i would be allowed to use in my subsequent projects in 42,
 and then compile it into a static library using Makefile.
 Like every other 42 project, it had several goals in mind:
-- practice of basic C syntax, logic, data types and structs;
+- practice of basic C syntax, logic, data types and structures;
 - dynamic data allocation managing and use of tools like GDB and Valgrind;
 - debugging and error solving;
 - familiarity with Makefile and compilers;
