@@ -1,8 +1,8 @@
 This is 42's first Common Core project after 42's intensive Piscine of C basics.
 In this project, i was tasked with creating my very first personal library of support
 functions that i would be allowed to use in my subsequent projects in 42,
-and then compile it into a static library using Makefile.
-Like every other 42 project, it had several goals in mind:
+and then compile it into a static library using a Makefile.
+Like every single other 42 project, it had several goals in mind:
 - practice of basic C syntax, logic, data types and structures;
 - dynamic data allocation managing;
 - use of tools like GDB and Valgrind to debug, avoid memory leaks and errors;
