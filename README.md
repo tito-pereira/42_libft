@@ -16,8 +16,8 @@ Common Core curriculum.
 It was made according to 42's Norm for good code etiquette, which includes rules regarding:
 - correct indentation;
 - maximum line lenght of 81 characters;
-- function maximum size of 25 lines;
-- 5 functions per file;
+- maximum function size of 25 lines;
+- maximum 5 functions per file;
 - mandatory 42 signature file header;
 - forbidden use of "for", "do / while", "switch / case", "goto";
 and many others...
