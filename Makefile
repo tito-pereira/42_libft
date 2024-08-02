@@ -6,16 +6,26 @@
 #    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/29 16:50:54 by tibarbos          #+#    #+#              #
-#    Updated: 2024/07/18 16:03:17 by marvin           ###   ########.fr        #
+#    Updated: 2024/08/02 13:19:43 by marvin           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+# Compiler && Tools
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
 AR = ar -rcs
 RM = rm -rf
-SRCS = ./src/ft_atoi.c \
+
+# Output colors
+RED= \e[31m
+GREEN= \e[32m
+BLUE= \e[34m
+WHITE= \e[37m
+
+# Source && Object Files
+SRC = ./src/ft_atoi.c \
 	  ./src/ft_bzero.c \
 	  ./src/ft_calloc.c \
 	  ./src/ft_isalnum.c \
@@ -49,9 +59,10 @@ SRCS = ./src/ft_atoi.c \
 	  ./src/ft_substr.c \
 	  ./src/ft_tolower.c \
 	  ./src/ft_toupper.c
-OBJS = ${SRCS:.c=.o}
+OBJDIR= ./obj
+OBJ = $(SRC:%.c=$(OBJDIR)/%.o)
 
-BONUS_SRCS = ./src/ft_lstnew.c \
+BONUS_SRC = ./src/ft_lstnew.c \
 		  ./src/ft_lstadd_front.c \
 		  ./src/ft_lstsize.c \
 		  ./src/ft_lstlast.c \
@@ -60,20 +71,28 @@ BONUS_SRCS = ./src/ft_lstnew.c \
 		  ./src/ft_lstclear.c \
 		  ./src/ft_lstiter.c \
 		  ./src/ft_lstmap.c
-BONUS_OBJS = $(BONUS_SRCS:.c=.o)
+BONUS_OBJ = $(BONUS_SRC:%.c=$(OBJDIR)/%.o)
+
+$(OBJDIR)/%.o: %.c
+	@mkdir -p $(dir $@)
+	@$(CC) $(CFLAGS) -c $< -o $@
+
+$(NAME): $(OBJ)
+	@$(AR) $(NAME) $(OBJ)
+	@echo "$(BLUE)libft: $(GREEN)library compiled$(WHITE)"
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(AR) $(NAME) $(OBJS)
-
-bonus: $(OBJS) $(BONUS_OBJS)
-	$(AR) $(NAME) $(OBJS) $(BONUS_OBJS)
+bonus: $(OBJ) $(BONUS_OBJ)
+	@$(AR) $(NAME) $(OBJ) $(BONUS_OBJ)
+	@echo "$(BLUE)libft: $(GREEN)library bonus compiled$(WHITE)"
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	@$(RM) $(OBJDIR)
+	@echo "$(BLUE)libft: $(RED)object files removed$(WHITE)"
 
 fclean: clean
-	$(RM) $(NAME)
+	@$(RM) $(NAME)
+	@echo "$(BLUE)libft: $(RED)library and object files removed$(WHITE)"
 
 re: fclean all
