@@ -4,7 +4,7 @@ functions that i would be allowed to use in my subsequent projects in 42,
 and then compile it into a static library using a Makefile.
 Like every single other 42 project, it had several goals in mind:
 - practice of basic C syntax, logic, data types and structures;
-- dynamic data allocation managing;
+- dynamic memory allocation management;
 - use of tools like GDB and Valgrind to debug, avoid memory leaks and errors;
 - incomplete instructions to promote self learning and error solving;
 - familiarity with Makefile and compilers;
