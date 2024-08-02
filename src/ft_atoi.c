@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 11:26:01 by tibarbos          #+#    #+#             */
-/*   Updated: 2024/08/02 12:33:02 by marvin           ###   ########.fr       */
+/*   Updated: 2024/08/02 13:59:20 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,23 +55,3 @@ unsigned long long	ft_atol(const char *str)
 		nb = nb * 10 + str[i++] - '0';
 	return (nb);
 }
-
-/*
-unsigned long long	ft_atoll(const char *nstr)
-{
-	size_t				i;
-	unsigned long long	nb;
-
-	nb = 0;
-	i = 0;
-	while ((nstr[i] >= 9 && nstr[i] <= 13) || nstr[i] == 32)
-		i++;
-	if (nstr[i] == '-' || nstr[i] == '+')
-	{
-		i++;
-	}
-	while (nstr[i] >= '0' && nstr[i] <= '9')
-		nb = nb * 10 + nstr[i++] - '0';
-	return (nb);
-}
-*/
